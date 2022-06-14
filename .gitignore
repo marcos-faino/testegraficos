@@ -1,0 +1,4 @@
+venv
+clone/.idea
+.pyc
+.*~

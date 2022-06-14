@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %} livraria {% endblock %}
+
+{% block content %}
+    <h1>Relatório de Quantidade de Livros por Gênero</h1>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Gênero</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for dado in tabela %}
+            <tr>
+                <td>{{ dado.desc }}</td>
+                <td>{{ dado.quant }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="text-center">
+    <h1>Gráfico</h1>
+        <p>
+            <img src="data:image/png;base64, {{grafico|safe}}" alt="" id="img">
+        </p>
+    </div>
+{% endblock %}
